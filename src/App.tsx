@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <h1>One-to-One (decoupled store)</h1>
+      <h2>Each component has a provider (2 providers) and they are using separate, decoupled, stores (2 store instances).</h2>
       <CoolThing store={storeOneToOneA}>
         <CoolThingPanel />
         <CoolThingActions />
@@ -23,7 +24,7 @@ function App() {
       <hr/>
 
       <h1>One-to-Many (decoupled store)</h1>
-      <h2>Each component and its children shares an instance of the store. Changes in one will result in changes in both.</h2>
+      <h2>Each component has a provider (2 providers) and they are sharing a decoupled store (1 store instances).</h2>
       <CoolThing store={storeOneToMany}>
         <CoolThingPanel />
         <CoolThingActions />
@@ -35,7 +36,7 @@ function App() {
       <hr/>
 
       <h1>One-to-One (internal store)</h1>
-      <h2>Each CoolThing component has its own store that is self contained. Every instance of CoolThing and children will share that store via context.</h2>
+      <h2>Each component has a provider (2 providers) and they are using separate, internal, stores (2 store instances).</h2>
       <CoolThing>
         <CoolThingPanel />
         <CoolThingActions />
