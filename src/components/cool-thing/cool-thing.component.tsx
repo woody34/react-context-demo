@@ -1,17 +1,8 @@
-import { FC, PropsWithChildren, SetStateAction, Dispatch, useState   } from 'react'
-import { CoolThingContext } from './cool-thing.context'
+import { FC, PropsWithChildren, useState   } from 'react'
+import { CoolThingContext, CoolThingStore } from './cool-thing.context'
 
 type CoolThingProps = PropsWithChildren & {
-  store?: [
-    {
-        count: number;
-    },
-    Dispatch<
-      SetStateAction<{
-        count: number;
-      }>
-    >
-  ]
+  store?: CoolThingStore
 }
 
 export const CoolThing: FC<CoolThingProps> = (props) => {
